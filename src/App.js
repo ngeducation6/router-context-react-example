@@ -1,25 +1,46 @@
-import logo from './logo.svg';
-import './App.css';
+// // App.js
+// import React from 'react';
+// import { CounterContextProvider } from './CounterContextProvider';
+// import { Outlet } from 'react-router-dom';
+// import SideNav from './SideNav';
 
-function App() {
+// const App = () => {
+//   return (
+//     <CounterContextProvider>
+//       <div style={{ display: 'flex' }}>
+//         {/* Sidebar */}
+//         <SideNav />
+
+//         {/* Main content area */}
+//         <div style={{ flex: 1, padding: '20px' }}>
+//           {/* Use Outlet to render nested routes */}
+//           <Outlet />
+//         </div>
+//       </div>
+//     </CounterContextProvider>
+//   );
+// };
+
+// export default App;
+
+// src/App.js
+// src/App.js
+import React from 'react';
+import { Outlet } from 'react-router-dom';
+import SideNav from './SideNav';
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <>
+    <p>App component</p>
+    <div style={{ display: 'flex' }}>
+      <SideNav />
+      <div style={{ flex: 1, marginLeft: '200px' }}>
+        <Outlet />
+      </div>
     </div>
+    </>
   );
-}
+};
 
 export default App;
