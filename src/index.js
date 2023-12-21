@@ -8,9 +8,13 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import App from './App';
 import './index.css';
 import { Home, ComponentA, ComponentB, ComponentC, NotFound, SeparateComponent } from './ComponentsAll'
+import { AppProvider } from './AppContext';
 
 ReactDOM.render(
+
   <Router>
+   <AppProvider>
+
     <Routes>
       <Route path="/separatecomponent" element={<SeparateComponent />} /> {/* Match any other route */}
       <Route path="/" element={<App />}>
@@ -22,7 +26,10 @@ ReactDOM.render(
       </Route>
       <Route path="*" element={<NotFound />} /> {/* Match any other route */}
     </Routes>
+    </AppProvider>
+
   </Router>,
+
   document.getElementById('root')
 );
 
