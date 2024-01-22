@@ -1,6 +1,7 @@
 // ComponentsAll.js
 import React, { useState } from 'react';
 import { useAppContext } from './AppContext';
+import { useNavigate } from 'react-router-dom';
 
 const ComponentA = () => {
   const { appData, updateContextData } = useAppContext();
@@ -79,7 +80,19 @@ const NotFound = () => {
 };
 
 const SeparateComponent = () => {
-  return <div>Separate Component</div>;
+  const navigate = useNavigate();
+
+  const handleButtonClick = () => {
+    // Call navigate when the button is clicked
+    navigate('/home');
+  };
+
+  return (
+    <div>
+      <p>Separate Component</p>
+      <button onClick={handleButtonClick}>Home</button>
+    </div>
+  );
 };
 
 const Home = () => {
