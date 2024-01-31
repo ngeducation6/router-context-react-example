@@ -9,9 +9,11 @@ export const AppProvider = ({ children }) => {
     // For example:
     isLoggedIn: false,
     username: '',
+    permissionsSet: '0000'
   });
 
   const updateContextData = newData => {
+    console.log("updating new data ", {...newData})
     setAppData(prevData => ({ ...prevData, ...newData }));
   };
 
